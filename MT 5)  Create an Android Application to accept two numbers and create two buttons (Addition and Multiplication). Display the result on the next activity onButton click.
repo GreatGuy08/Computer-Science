@@ -1,0 +1,126 @@
+Create an Android Application to accept two numbers and create two buttons (Addition and Multiplication). Display the result on the next activity onButton click.
+
+
+
+MainActivity.xml
+
+<?xml version=”1.0” encoding=”utf-8”?>
+<RelativeLayout xmlns:android=http://schemas.android.com/apk/res/android
+    Xmlns:app=http://schemas.android.com/apk/res-auto
+    Xmlns:tools=http://schemas.android.com/tools
+    Android:layout_width=”match_parent”
+    Android:layout_height=”match_parent”
+    Tools:context=”.MainActivity”
+    Tools:layout_editor_absoluteY=”81dp”>
+  
+    <!—Text view for result view
+    <TextView
+        Android:id=”@+id/textView_answer”
+        Android:layout_width=”100dp”
+        Android:layout_height=”25dp”
+        Android:layout_marginLeft=”130dp”
+        Android:layout_marginTop=”300dp”
+        Android:text=”0”
+        Android:textSize=”20dp”
+        Android:textStyle=”bold” />
+  
+    <!—take the input first number
+    <EditText
+        Android:id=”@+id/editText_first_no”
+        Android:layout_width=”150dp”
+        Android:layout_height=”40dp”
+        Android:layout_marginLeft=”200dp”
+        Android:layout_marginTop=”40dp”
+        Android:inputType=”number” />
+    <!—for message input first number
+    <TextView
+        Android:id=”@+id/textView_first_no”
+        Android:layout_width=”150dp”
+        Android:layout_height=”25dp”
+        Android:layout_marginLeft=”10dp”
+        Android:layout_marginTop=”50dp”
+        Android:text=”First number”
+        Android:textSize=”20dp” />
+  
+    <!—view message 
+    <TextView
+        Android:id=”@+id/textView_second_no”
+        Android:layout_width=”150dp”
+        Android:layout_height=”25dp”
+        Android:layout_marginLeft=”10dp”
+        Android:layout_marginTop=”100dp”
+        Android:text=”Second number”
+        Android:textSize=”20dp” />
+  
+    <!—take input for second number 
+  
+    <EditText
+        Android:id=”@+id/editText_second_no”
+        Android:layout_width=”150dp”
+        Android:layout_height=”40dp”
+        Android:layout_marginLeft=”200dp”
+        Android:layout_marginTop=”90dp”
+        Android:inputType=”number”
+        Tools:ignore=”MissingConstraints” />
+  
+    <!—button for run add logic and view result 
+  
+    <Button
+        Android:id=”@+id/add_button”
+        Android:layout_width=”100dp”
+        Android:layout_height=”50dp”
+        Android:layout_marginLeft=”110dp”
+        Android:layout_marginTop=”200dp”
+        Android:text=”ADD” />
+  
+</RelativeLayout>
+MainActivity.java
+Import android.support.v7.app.AppCompatActivity;
+Import android.os.Bundle;
+Import android.view.View;
+Import android.widget.Button;
+Import android.widget.EditText;
+Import android.widget.TextView;
+  
+Public class MainActivity extends AppCompatActivity {
+  
+    // define the global variable
+  
+    // variable number1, number2 for input input number
+    // Add_button, result textView
+  
+    EditText number1;
+    EditText number2;
+    Button Add_button;
+    TextView result;
+    Int ans=0;
+  
+    @Override
+    Protected void onCreate(Bundle savedInstanceState) {
+        Super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+  
+        // by ID we can use each component which id is assign in xml file
+        Number1=(EditText) findViewById(R.id.editText_first_no);
+        Number2=(EditText) findViewById(R.id.editText_second_no);
+        Add_button=(Button) findViewById(R.id.add_button);
+        Result = (TextView) findViewById(R.id.textView_answer);
+  
+        // Add_button add clicklistener
+        Add_button.setOnClickListener(new View.OnClickListener() {
+  
+            Public void onClick(View v) {
+  
+                // num1 or num2 double type
+                // get data which is in edittext, convert it to string
+                // using parse Double convert it to Double type
+                Double num1 = Double.parseDouble(number1.getText().toString());
+                Double num2 = Double.parseDouble(number2.getText().toString());
+                // add both number and store it to sum
+                Double sum = num1 + num2;
+                // set it ot result textview
+                Result.setText(Double.toString(sum));
+            }
+        });
+    }
+}
