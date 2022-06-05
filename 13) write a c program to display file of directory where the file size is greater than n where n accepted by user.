@@ -1,0 +1,52 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include <dirent.h>
+void findsize(long int n)
+{
+long int x=0;
+struct dirent *de;
+DIR *dr=opendir("C:/javap/vivekchaware");
+if(dr==NULL)
+{
+printf("could not open dir");
+exit (0);
+}
+else
+{
+while((de=readdir(dr))!=NULL)
+{
+x=0;
+FILE *fp=fopen(de->d_name,"r");
+if(fp==NULL)
+{
+printf("\n");
+}
+else
+{
+fseek(fp,0,SEEK_END);
+x=ftell(fp);
+if(x>n)
+{
+printf("%s\n",de->d_name);
+}
+}
+}
+}
+}
+void main()
+{
+char x[100];
+long int s;
+printf("\nenter the file size\n");
+scanf("%ld",&s);
+findsize(s);
+}
+
+
+*************************************************************************************
+
+OUTPUT:-
+Enter the file size
+11
+12.c
+a.exe
