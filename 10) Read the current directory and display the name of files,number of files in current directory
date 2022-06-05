@@ -1,0 +1,157 @@
+#include <stdio.h>
+#include <dirent.h>
+int main(void)
+{
+struct dirent *de;
+DIR *dr = opendir(".");
+if (dr == NULL)
+{
+printf("Could not open current directory" );
+return 0;
+}
+while ((de = readdir(dr)) != NULL)
+printf("%s\n", de->d_name);
+closedir(dr);
+return 0;
+}
+
+
+*************************************************************************************
+
+
+OUTPUT:
+.sudo_as_admin_successful
+AOS3.c
+6_1 , 16_2-1.txt
+invertdata3066.cpp
+..
+maxdata.cpp
+1-1-1.txt
+1-18.txt
+1_2, 9_124_2-1.txt
+cpp.txt
+20_2,21_1-1.txt
+12_1-1.txt
+printdata.cpp
+2-12.txt
+1.txt
+.local
+.mozilla
+AOS2.c
+Untitled Document 1
+a.out
+2-6.txt
+dd
+20_1,25_2-1.txt
+2-21.txt
+15 mark index.txt
+1-25.txt
+2-7.txt
+.gphoto
+1-3.txt
+.ICEauthority
+Divya.docx
+Public
+Desktop
+AOS17.c
+2-15.txt
+4_1, 10_2,11_1-1.txt
+4_1, 10_2,11_1-2.txt
+20_1,25_2.txt
+12_1.txt
+.bashrc
+1-20.txt
+divya
+1-9.txt
+4_2,8_1,13_2,26_1.txt
+AOS5.c
+cpp sybcs-1.txt
+1-26.txt
+cpp sybcs.txt
+1-14.txt
+Divya.odt
+as18.c
+20_2,21_1.txt
+1-11.txt
+2-18.txt
+AOS1.c
+2-11.txt
+Templates
+AOS16.c
+function.txt
+5_1, 15_2,19_2-1.txt
+1-2.txt
+7_1,17_1,18_2-1.txt
+2-22.txt
+AllSlips.pdf
+queued.c
+.cache
+AOS8.c
+2-1.txt
+2-16.txt
+hello.cpp
+examples.desktop
+.ssh
+AOS9.c
+1-12.txt
+1-19.txt
+1_2, 9_124_2.txt
+Assignment - Copy.zip
+3038.pdf
+1-17.txt
+1-13.txt
+4_2,8_1,13_2,26_1-1.txt
+2-19.txt
+7_2,8_2,17_2.txt
+.profile
+10_1,13_1,23_2-1.txt
+1-1.txt
+.bash_history
+AOS6.c
+.config
+singlylink.c
+25 marks index.txt
+1-16 (copy).txt
+5_2.txt
+2-10.txt
+.
+wc.c
+eclipse
+4_1, 10_2,11_1.txt
+2-17.txt
+2-13.txt
+.gnupg
+7_1,17_1,18_2.txt
+1-15.txt
+2-9.txt
+cities.txt.cpp
+1-8.txt
+Downloads
+2-3.txt
+.bash_logout
+2-2.txt
+3_2,14_1,22_1.txt
+1-4.txt
+Example.scala
+7_1,17_1,18_2 (copy).txt
+Videos
+1-5.txt
+AOS7.c
+6_1 , 16_2.txt
+10_1,13_1,23_2.txt
+AOS18.c
+2-24.txt
+invertdata.cpp
+2-5.txt
+2-14.txt
+1-6.txt
+AOS10.c
+1-10.txt
+3_2,14_1,22_1-1.txt
+1-7.txt
+5_1, 15_2,19_2.txt
+Pictures
+5_2-1.txt
+2-8.txt
+wget-log
+7_2,8_2,17_2-1.txt
