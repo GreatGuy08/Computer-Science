@@ -1,0 +1,23 @@
+#include <sys/types.h>
+#include <unistd.h>
+#include <sys/stat.h>
+#include <stdio.h>
+main()
+{
+int pid=fork();
+int fd=creat("output.txt",S_IRWXU);
+if(pid!=0 && pid!=-1)
+{
+close(1); // stdout
+dup(fd); // replace file descriptor
+execlp("ls","ls","-l",NULL);
+close(fd);
+printf("\n File is Created");
+}
+}
+
+
+*************************************************************************************
+
+OUTPUT:-
+/home/divya/output.txt
