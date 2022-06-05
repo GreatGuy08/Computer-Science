@@ -1,0 +1,35 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<fcntl.h>
+#include<unistd.h>
+#include<sys/stat.h>
+#include<sys/types.h>
+#include<dirent.h>
+int main (int argc, char *argv[])
+if (( fd = open (fnm , O_RDONLY)) == -1)
+{
+struct stat fileStat;
+char fnm[30];
+int fd=0;
+FILE *filename;
+printf("Enter file name= ");
+scanf("%s",fnm);
+{
+perror ( "open " );
+system("pause");
+exit (1) ;
+}
+if(fstat(fd, &fileStat)<0)
+return 1;
+printf("Information for %s\n",fnm);
+system("pause");
+return 0;
+}
+
+
+*************************************************************************************
+
+
+OUTPUT:
+=> Input: Enter file = abc.txt
+=> Output: file type= .txt
