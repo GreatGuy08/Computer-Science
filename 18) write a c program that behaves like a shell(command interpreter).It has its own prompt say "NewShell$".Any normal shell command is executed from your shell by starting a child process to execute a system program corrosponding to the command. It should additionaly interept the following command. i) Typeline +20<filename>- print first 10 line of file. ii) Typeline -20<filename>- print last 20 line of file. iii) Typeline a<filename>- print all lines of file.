@@ -93,12 +93,122 @@ printf("bad command");
 }
 return 0;
 }
-
-
 *************************************************************************************
-
-
 OUTPUT:
 newshell$ typeline que.c +10
 #include<stdio.h>
 #define max 3
+struct queue
+{
+int a[max];
+int rear,front;
+}*q;
+void init(struct queue *q)
+{
+q->front=q->rear=-1;
+newshell$ typeline que.c -20
+case 3:if(isempty(q))
+{
+printf("\n empty queue.....");
+}
+else
+{
+del(q);
+}
+break;
+case 4:disp(q);
+break;
+default:printf("wrong choice.....");
+break;
+}
+}while(ch<=4);
+}
+newshell$ typeline que.c a
+#include<stdio.h>
+#define max 3
+struct queue
+{
+int a[max];
+int rear,front;
+}*q;
+void init(struct queue *q)
+{
+q->front=q->rear=-1;
+}
+void insert(struct queue *q,int val)
+{
+q->rear++;
+q->a[q->rear]=val;
+printf("\n insert zala...");
+}
+void del(struct queue *q)
+{
+int val;
+val=q->a[q->front];
+q->front--;
+printf("\n deleted=%d",val);
+}
+void disp(struct queue *q)
+{
+int i;
+for(i=q->front+1;i<=q->rear;i++)
+{
+printf("\t%d",q->a[i]);
+}
+}
+int isempty(struct queue *q)
+{
+if(q->rear==q->front)
+{
+return 1;
+}
+else
+{
+return 0;
+}
+}
+int isfull(struct queue *q)
+{
+if(q->rear==max-1)
+{
+return 1;
+}
+else
+{
+return 0;
+}
+}
+void main()
+{
+int ch,val;
+do
+{
+printf("\n1.init \n2.insert \n3.del \n4.disp \nenter the choice:");
+scanf("%d",&ch);
+switch(ch)
+{
+case 1:init(q);
+break;
+case 2:if(isfull(q))
+{
+printf("\n full ahe insert karu naka.....");
+scanf("%d",&val);
+insert(q,val);
+}
+break;
+case 3:if(isempty(q))
+{
+printf("\n empty queue.....");
+}
+else
+{
+del(q);
+}
+break;
+case 4:disp(q);
+break;
+default:printf("wrong choice.....");
+break;
+}
+}while(ch<=4);
+}
