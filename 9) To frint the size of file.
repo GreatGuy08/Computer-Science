@@ -1,0 +1,28 @@
+#include <stdio.h>
+long int FindFileSize(char file_name[])
+{
+FILE *fp=fopen(file_name,"r");
+if (fp == NULL)
+{
+printf("\nFile not found ");
+return -1;
+}
+fseek(fp,0l,SEEK_END);
+long int res=ftell(fp);
+fclose(fp);
+return res;
+}
+int main()
+{
+char file_name[]={"AOS8.c"};
+int result=FindFileSize(file_name);
+if(result!=-1)
+printf("size of file in %1d bytes\n",result);
+return 0;
+}
+
+
+*************************************************************************************
+
+OUTPUT:
+size of file in 362 bytes
