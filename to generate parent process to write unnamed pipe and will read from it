@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<unistd.h>
+#include<string.h>
+int main()
+{
+int fd[2] , ret = 0;
+char buffer[] = "Marvellous InfoSystems";
+char readBuff[BUFSIZ];
+pid_t Childpid;
+pipe(fd);
+Childpid = fork();
+if(Childpid == 0)
+{
+close(fd[0]);
+printf("Child intiaites communication by writing the data at output side of the pipe \n");
+write(fd[1] , buffer , sizeof(buffer));
+}
+else
+{
+close(fd[1]);
+ret = read(fd[0] , readBuff , sizeof(readBuff));
+printf("The data read by Parent process is : %s \n",readBuff);
+}
+return 0;
+}
+
+
+
+*************************output***************************************
+
+
+Child intiaites communication by writing the data at output side of the pipe
+The data read by Parent process is : Marvellous InfoSystems
