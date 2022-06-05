@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+int main()
+{
+printf("Sleeping for 15 seconds \n");
+sleep(5);
+printf("Wake up \n");
+}
+
+*************************************************************************************
+
+OUTPUT:
+Sleeping for 15 seconds
+Wake up
